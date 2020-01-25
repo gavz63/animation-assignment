@@ -104,3 +104,12 @@ Entity.prototype.draw = function (ctx) {
         this.game.ctx.closePath();
     }
 }
+
+/////Collision
+function isCollided(A, B)
+{
+    let dist = (B.y - A.y) * (B.y - A.y) + (B.x - A.x) * (B.x - A.x);
+    dist = Math.sqrt(dist);
+
+    return dist <= A.radius + B.radius;
+}
